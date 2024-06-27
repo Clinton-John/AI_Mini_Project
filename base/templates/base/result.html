@@ -1,0 +1,56 @@
+{% extends 'index.html' %} {% block content %}
+<div class="container">
+    <h1>Fill in the Form to Get Your Insurance Cover Price</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <label for="age">Age</label>
+        <input type="number" name="user_age" id="" required>
+        <br>
+        <br>
+
+        <label for="sex">Sex</label>
+        <select name="sex" id="" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <br>
+        <br>
+
+        <label for="bmi">BMI</label>
+        <input type="text" name="bmi" placeholder="BMI" required id="">
+        <br>
+        <br>
+
+        <label for="children">Children</label>
+        <input type="number" name="children" required id="">
+        <br>
+        <br>
+
+        <label for="smoker">Smoker</label>
+        <select name="smoker" required id="">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+        <br>
+        <br>
+
+        <label for="region">Region</label>
+        <select name="region" required id="">
+            <option value="northeast">NorthEast</option>
+            <option value="northwest">NorthWest</option>
+            <option value="southeast">SouthEast</option>
+            <option value="southwest">SouthWest</option>
+        </select>
+        <br>
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <div class="predicted_price">
+        <h1>Your Insurance Price Is: {{ ins_price }}</h1>
+    </div>
+</div>
+{% endblock %}
