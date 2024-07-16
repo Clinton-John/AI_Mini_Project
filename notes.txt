@@ -10,3 +10,28 @@ git rm -r --cached env/
 git rm -r --cached data/
 git rm --cached Medical_insurance_Prediction.ipynb
 git commit -m "Remove ignored files and update .gitignore" 
+
+-- DEPLOYING DJANGO TO VERCEL
+in the settings.py --> Allowed host = ['.vercel.app']
+generate the requirements.txt -- pip freeze requirements.txt
+
+create a new vercel.json then add the following line of code
+{
+    "builds": [{
+        "src": "project_name/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+    }],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "project_name/wsgi.py"
+        }
+    ]
+}
+
+in the wsgi.py file, add the line 
+app = application
+
+now in vercel, add new project, select repository
+after project is set up, import, then deploy it will generate a link 
