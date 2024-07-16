@@ -4,3 +4,9 @@ python --version
 pip install django
 python -m venv myenv
 myenv\Scripts\activate
+
+
+git rm -r --cached env/
+git rm -r --cached data/
+git rm --cached Medical_insurance_Prediction.ipynb
+git commit -m "Remove ignored files and update .gitignore" 
