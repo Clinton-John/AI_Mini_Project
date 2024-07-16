@@ -1,0 +1,6 @@
+https://www.kaggle.com/datasets/mirichoi0218/insurance      --- dataset file link to kaggle
+
+python --version
+pip install django
+python -m venv myenv
+myenv\Scripts\activate
